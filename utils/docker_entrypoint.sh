@@ -35,6 +35,10 @@ cp /root/aosp_bashrc.sh /home/aosp/aosp_bashrc.sh
 chown aosp:aosp /home/aosp/aosp_bashrc.sh
 chmod +x /home/aosp/aosp_bashrc.sh
 
+#fix ./bin/setup-yocto.sh
+mkdir -p /sdk/tools
+ln -s /home/aosp/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf /sdk/tools/gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf
+
 
 #if chk is empty then return value is 1 ($? is 1)
 #and if set -e then will exit script

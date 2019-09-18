@@ -52,9 +52,6 @@ RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 #
-#ADD gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz /opt
-
-#
 COPY gitconfig /root/.gitconfig
 COPY ssh_config /root/.ssh/config
 
