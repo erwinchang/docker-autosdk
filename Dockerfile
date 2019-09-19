@@ -43,6 +43,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y chrpath git-email keyutils
 ## for autosdk5001: setup.sh
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
+## ./build-core-sdk.sh dra7xx-evm
+## fix  /usr/include/c++/4.8/cstdint:38:28: fatal error: bits/c++config.h: No such file or directory
+sudo apt-get install gcc-multilib g++-multilib
+
+
 #RUN rm -rf /var/lib/apt/lists/*
 
 RUN locale-gen en_US.UTF-8
