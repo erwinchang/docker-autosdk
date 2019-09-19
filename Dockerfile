@@ -69,4 +69,4 @@ COPY utils/aosp/.bash_logout /root/aosp
 COPY utils/aosp/.bashrc /root/aosp
 COPY utils/aosp/.profile /root/aosp
 RUN chmod +x /root/docker_entrypoint.sh
-#ENTRYPOINT ["/root/docker_entrypoint.sh"]
+ENTRYPOINT ["/root/docker_entrypoint.sh"]
