@@ -20,9 +20,18 @@ groupadd -g $GROUP_ID -r aosp
 if [ -d /home/aosp ]
 then
     useradd -u $USER_ID -r -g aosp aosp
-    [ ! -f /home/aosp/.bash_logout ] && cp /root/aosp/.bash_logout /home/aosp
-    [ ! -f /home/aosp/.bashrc ] && cp /root/aosp/.bashrc /home/aosp
-    [ ! -f /home/aosp/.profile ] && cp /root/aosp/.profile /home/aosp
+    [ ! -f /home/aosp/.bash_logout ] && {
+        cp /root/aosp/.bash_logout /home/aosp
+        chown aosp:aosp /home/aosp/.bash_logout
+    }
+    [ ! -f /home/aosp/.bashrc ] && {
+        cp /root/aosp/.bashrc /home/aosp
+        chown aosp:aosp /home/aosp/.bashrc
+    }
+    [ ! -f /home/aosp/.profile ] && {
+        cp /root/aosp/.profile /home/aosp
+        chown aosp:aosp /home/aosp/.profile
+    }
 else
     useradd -u $USER_ID --create-home -r -g aosp aosp
 fi
