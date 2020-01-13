@@ -15,4 +15,4 @@ cdir="$vdir/ccache"
 mdir="/home/${USER}/$dirx"
 #home is workdir
 echo "docker run -e WORK_DIR=/home/aosp -v $mdir:/home/aosp -it --rm --name $name erwinchang/autosdk /bin/bash"
-docker run -e WORK_DIR=/home/aosp -v $mdir:/home/aosp -it --rm --name $name erwinchang/autosdk /bin/bash
+docker run -e WORK_DIR=/home/aosp -e TZ=Asia/Taipei -e USER_ID=1000 -e GROUP_ID=1000 -v $mdir:/home/aosp -it --rm --name $name erwinchang/autosdk /bin/bash
